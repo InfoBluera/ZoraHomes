@@ -77,14 +77,7 @@
   box-sizing: border-box;
 }
 
-.btn-icon-arrow {
-  transition: transform var(--transition-fast);
-  flex-shrink: 0;
-}
 
-.btn:hover .btn-icon-arrow {
-  transform: translateX(4px);
-}
 
 /* --------------------------------------------------------------------------
    2. LEADERSHIP & TEAM SECTION

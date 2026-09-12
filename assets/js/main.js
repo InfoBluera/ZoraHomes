@@ -1,6 +1,6 @@
 /**
  * ZORA HOMES — MAIN CONTROLLER
- * Navigation, Scroll Observer, Counter Engine, Theme Switcher & Magnetic Cursor
+ * Navigation, Scroll Observer, Counter Engine & Theme Switcher
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveals();
   initMetricCounters();
   initThemeToggle();
-  initMagneticCursor();
   initSmoothAnchorScrolling();
 });
 
@@ -143,33 +142,6 @@ function initThemeToggle() {
   });
 }
 
-/* --------------------------------------------------------------------------
-   6. LUXURY MAGNETIC CURSOR AURA
-   -------------------------------------------------------------------------- */
-function initMagneticCursor() {
-  const cursorAura = document.querySelector('.cursor-aura');
-  if (!cursorAura || window.innerWidth < 992) return;
-
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let auraX = mouseX;
-  let auraY = mouseY;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  }, { passive: true });
-
-  function renderAura() {
-    auraX += (mouseX - auraX) * 0.12;
-    auraY += (mouseY - auraY) * 0.12;
-    cursorAura.style.left = `${auraX}px`;
-    cursorAura.style.top = `${auraY}px`;
-    requestAnimationFrame(renderAura);
-  }
-
-  requestAnimationFrame(renderAura);
-}
 
 /* --------------------------------------------------------------------------
    7. SMOOTH ANCHOR SCROLLING
