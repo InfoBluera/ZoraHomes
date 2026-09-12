@@ -217,84 +217,21 @@
             <div class="badge-subtext">Comprehensive Lifetime Warranty</div>
           </div>
 
-          <!-- Architectural Canvas Portal -->
-          <div class="architectural-portal">
-            <!-- Stylized Luxury Architectural Wireframe / Render Illustration -->
-            <svg class="portal-canvas" viewBox="0 0 600 750" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#1E222D"/>
-                  <stop offset="50%" stop-color="#14161F"/>
-                  <stop offset="100%" stop-color="#0B0C10"/>
-                </linearGradient>
-                <linearGradient id="marbleTexture" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#282D3C"/>
-                  <stop offset="50%" stop-color="#181B26"/>
-                  <stop offset="100%" stop-color="#12141C"/>
-                </linearGradient>
-                <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="15" result="blur"/>
-                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                </filter>
-              </defs>
-
-              <!-- Luxury Minimalist Interior Scene -->
-              <rect width="600" height="750" fill="url(#wallGrad)"/>
-              
-              <!-- Ambient Architectural Glow Spot -->
-              <circle cx="300" cy="240" r="180" fill="rgba(212, 175, 55, 0.08)" filter="url(#softGlow)"/>
-
-              <!-- Ceiling Beam & Recessed Lighting Track -->
-              <path d="M50 80 L550 80" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
-              <circle cx="150" cy="80" r="3" fill="#FFF4D0"/>
-              <circle cx="300" cy="80" r="3" fill="#FFF4D0"/>
-              <circle cx="450" cy="80" r="3" fill="#FFF4D0"/>
-
-              <!-- Grand Architectural Floor-to-Ceiling Window -->
-              <rect x="70" y="120" width="220" height="380" rx="4" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
-              <line x1="180" y1="120" x2="180" y2="500" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-              <line x1="70" y1="310" x2="290" y2="310" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-
-              <!-- Dramatic Shadow Cast from Window -->
-              <polygon points="70,500 290,500 480,680 180,680" fill="rgba(212, 175, 55, 0.04)"/>
-
-              <!-- Monolithic Italian Marble Feature Wall -->
-              <rect x="320" y="140" width="210" height="360" rx="4" fill="url(#marbleTexture)" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
-              <!-- Marble Veins -->
-              <path d="M340 160 Q380 230 430 250 T510 380" stroke="rgba(212, 175, 55, 0.35)" stroke-width="1.2" fill="none"/>
-              <path d="M360 320 Q410 360 480 430" stroke="rgba(255, 255, 255, 0.2)" stroke-width="0.8" fill="none"/>
-
-              <!-- Suspended Architectural Pendant Lamp -->
-              <line x1="300" y1="80" x2="300" y2="280" stroke="#C5A880" stroke-width="1.5"/>
-              <ellipse cx="300" cy="280" rx="40" ry="8" fill="none" stroke="#D4AF37" stroke-width="2"/>
-              <circle cx="300" cy="280" r="14" fill="#FFF4D0" filter="url(#softGlow)"/>
-
-              <!-- Bespoke Low-Slung Lounge & Fluted Wood Millwork -->
-              <rect x="140" y="470" width="320" height="90" rx="6" fill="#1C1F2B" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-              <rect x="160" y="450" width="280" height="30" rx="4" fill="#242938"/>
-              <rect x="180" y="520" width="240" height="15" fill="#3D2916" stroke="rgba(212,175,55,0.4)" stroke-width="0.8"/>
-
-              <!-- Sleek Travertine Coffee Slab -->
-              <polygon points="200,580 400,580 370,620 170,620" fill="#B8A494" opacity="0.85"/>
-              <rect x="230" y="620" width="110" height="12" fill="#1F150C"/>
-
-              <!-- Floor Reflections & Perspective Lines -->
-              <line x1="0" y1="640" x2="600" y2="640" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-              <line x1="100" y1="640" x2="30" y2="750" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-              <line x1="500" y1="640" x2="570" y2="750" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-            </svg>
+          <!-- Hero Animated Logo Sequence Portal -->
+          <div class="hero-logo-portal" id="heroLogoContainer">
+            <canvas id="heroLogoCanvas" class="hero-logo-canvas" width="576" height="606" aria-label="Zora Homes Animated Master Logo"></canvas>
 
             <div class="portal-overlay-gradient"></div>
             
             <div class="portal-content-overlay">
-              <div class="portal-badge">Curated Spatial Design</div>
-              <div class="portal-title">The Monolith Penthouse Suite</div>
+              <div class="portal-badge">The Signature Mark</div>
+              <div class="portal-title">Zora Architectural Atelier</div>
               <div class="portal-specs">
-                <span>Direct Sourced Calacatta</span>
+                <span>Spatial Symmetry</span>
                 <span>•</span>
-                <span>Acoustic Fluted Walnut</span>
+                <span>Bespoke Engineering</span>
                 <span>•</span>
-                <span>Circadian Lighting</span>
+                <span>Haute Living</span>
               </div>
             </div>
           </div>
@@ -1380,6 +1317,7 @@
 
   <!-- JavaScript Modules -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/hero-animation.js"></script>
   <script src="assets/js/interactions.js"></script>
   <script src="assets/js/modal-form.js"></script>
 </body>
