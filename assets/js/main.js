@@ -17,17 +17,20 @@ document.addEventListener('DOMContentLoaded', () => {
    -------------------------------------------------------------------------- */
 function initNavbarScroll() {
   const header = document.querySelector('.site-header');
+  const hero = document.getElementById('hero');
   if (!header) return;
 
   const handleScroll = () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
+    const heroBottom = hero ? (hero.offsetTop + hero.offsetHeight - header.offsetHeight) : window.innerHeight;
+    if (window.scrollY >= heroBottom) {
+      header.classList.add('scrolled-past-hero');
     } else {
-      header.classList.remove('scrolled');
+      header.classList.remove('scrolled-past-hero');
     }
   };
 
   window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll, { passive: true });
   handleScroll();
 }
 
@@ -124,22 +127,11 @@ function initMetricCounters() {
 }
 
 /* --------------------------------------------------------------------------
-   5. LUXURY THEME TOGGLE (Obsidian vs Platinum Mode)
+   5. PERMANENT LUXURY DARK THEME ENFORCEMENT
    -------------------------------------------------------------------------- */
 function initThemeToggle() {
-  const toggleButtons = document.querySelectorAll('.btn-theme-toggle');
-  const savedTheme = localStorage.getItem('zora_theme') || localStorage.getItem('zoro_theme') || 'dark';
-
-  document.documentElement.setAttribute('data-theme', savedTheme);
-
-  toggleButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const nextTheme = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', nextTheme);
-      localStorage.setItem('zora_theme', nextTheme);
-    });
-  });
+  document.documentElement.setAttribute('data-theme', 'dark');
+  localStorage.setItem('zora_theme', 'dark');
 }
 
 
