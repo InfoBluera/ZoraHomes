@@ -1,87 +1,12 @@
 /**
  * ZORA HOMES — INTERACTIVE EXPERIENCES
- * Project Scope Estimator, Architectural Style Quiz & Material Gallery
+ * Architectural Style Quiz & Material Gallery
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initProjectEstimator();
   initArchitecturalQuiz();
   initFaqAccordion();
 });
-
-/* --------------------------------------------------------------------------
-   1. BESPOKE PROJECT SCOPE & INVESTMENT ESTIMATOR
-   -------------------------------------------------------------------------- */
-function initProjectEstimator() {
-  const sqftSlider = document.getElementById('sqftRange');
-  const sqftDisplay = document.getElementById('sqftValueDisplay');
-  const tierButtons = document.querySelectorAll('.tier-btn');
-  const scopeCheckboxes = document.querySelectorAll('.scope-addon-check');
-  const totalPriceEl = document.getElementById('estimatedTotalPrice');
-  const timelineEl = document.getElementById('estimatedTimeline');
-  const designFeeEl = document.getElementById('breakdownDesignFee');
-  const executionFeeEl = document.getElementById('breakdownExecutionFee');
-  const materialsFeeEl = document.getElementById('breakdownMaterialsFee');
-
-  if (!sqftSlider || !totalPriceEl) return;
-
-  let currentTier = 'luxury'; // 'signature', 'luxury', 'ultra'
-  const tierRates = {
-    signature: { basePerSqFt: 180, timeWeeksPer1000: 3.5, name: 'Signature Executive' },
-    luxury: { basePerSqFt: 290, timeWeeksPer1000: 4.5, name: 'Haute Luxury' },
-    ultra: { basePerSqFt: 460, timeWeeksPer1000: 6.0, name: 'Bespoke Architectural Masterpiece' }
-  };
-
-  function calculateEstimate() {
-    const sqft = parseInt(sqftSlider.value, 10);
-    sqftDisplay.textContent = `${sqft.toLocaleString()} sq ft`;
-
-    const config = tierRates[currentTier];
-    let baseCost = sqft * config.basePerSqFt;
-
-    // Addon multipliers
-    let addonSum = 0;
-    scopeCheckboxes.forEach(cb => {
-      if (cb.checked) {
-        addonSum += parseFloat(cb.getAttribute('data-addon-value') || 0);
-      }
-    });
-
-    const totalEstimate = Math.round(baseCost * (1 + addonSum));
-    const designFee = Math.round(totalEstimate * 0.18);
-    const materialsFee = Math.round(totalEstimate * 0.48);
-    const executionFee = totalEstimate - designFee - materialsFee;
-
-    // Timeline in weeks
-    const calculatedWeeks = Math.max(8, Math.round((sqft / 1000) * config.timeWeeksPer1000 + 4));
-
-    // Update UI with currency formatting
-    totalPriceEl.textContent = `$${totalEstimate.toLocaleString()}`;
-    if (timelineEl) timelineEl.textContent = `Estimated Execution: ${calculatedWeeks} — ${calculatedWeeks + 4} Weeks`;
-    if (designFeeEl) designFeeEl.textContent = `$${designFee.toLocaleString()}`;
-    if (executionFeeEl) executionFeeEl.textContent = `$${executionFee.toLocaleString()}`;
-    if (materialsFeeEl) materialsFeeEl.textContent = `$${materialsFee.toLocaleString()}`;
-  }
-
-  // Event Listeners
-  sqftSlider.addEventListener('input', calculateEstimate);
-
-  tierButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tierButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentTier = btn.getAttribute('data-tier') || 'luxury';
-      calculateEstimate();
-    });
-  });
-
-  scopeCheckboxes.forEach(cb => {
-    cb.addEventListener('change', calculateEstimate);
-  });
-
-  // Initial calculation
-  calculateEstimate();
-}
 
 /* --------------------------------------------------------------------------
    2. ARCHITECTURAL STYLE IDENTITY QUIZ

@@ -13,40 +13,40 @@
 }
 
 :root {
-  /* Color Palette - Deep Obsidian & Warm Neutrals */
-  --bg-primary: #0A0B0E;
-  --bg-secondary: #12141A;
-  --bg-card: rgba(22, 25, 33, 0.75);
-  --bg-card-hover: rgba(28, 32, 43, 0.9);
-  --bg-glass: rgba(18, 20, 26, 0.65);
-  --bg-glass-subtle: rgba(255, 255, 255, 0.03);
-  --bg-surface-elevated: #181B24;
+  /* Color Palette — Master Reference: Sage Architectural Finish (#A3B18A) */
+  --bg-primary: #A3B18A;
+  --bg-secondary: #A3B18A;
+  --bg-card: rgba(255, 255, 255, 0.24);
+  --bg-card-hover: rgba(255, 255, 255, 0.38);
+  --bg-glass: rgba(255, 255, 255, 0.18);
+  --bg-glass-subtle: rgba(18, 22, 17, 0.04);
+  --bg-surface-elevated: rgba(255, 255, 255, 0.32);
 
   /* Accent Metallics & Luxury Accents */
-  --gold-primary: #D4AF37;
-  --gold-light: #F3E5AB;
-  --gold-muted: #C5A880;
-  --gold-dark: #9A7B2C;
-  --gold-gradient: linear-gradient(135deg, #EADBC0 0%, #C5A880 50%, #A68658 100%);
-  --gold-glow: rgba(197, 168, 128, 0.25);
-  --gold-glow-strong: rgba(197, 168, 128, 0.45);
+  --gold-primary: #3A2F15;
+  --gold-light: #5A471C;
+  --gold-muted: #42523F;
+  --gold-dark: #1E180B;
+  --gold-gradient: linear-gradient(135deg, #3A2F15 0%, #685322 45%, #28200E 100%);
+  --gold-glow: rgba(58, 47, 21, 0.12);
+  --gold-glow-strong: rgba(58, 47, 21, 0.22);
 
-  --bronze-accent: #B8860B;
-  --platinum: #E5E7EB;
+  --bronze-accent: #685322;
+  --platinum: #121611;
   --emerald-subtle: #2E5A44;
 
-  /* Text & Readability */
-  --text-primary: #F8F9FA;
-  --text-secondary: #CBD5E1;
-  --text-muted: #94A3B8;
-  --text-dim: #64748B;
-  --text-gold: #E5C396;
+  /* Text & Readability (From Hero Master Reference) */
+  --text-primary: #121611;
+  --text-secondary: #2E372B;
+  --text-muted: #3E4A3B;
+  --text-dim: #556652;
+  --text-gold: #3A2F15;
 
   /* Borders & Lines */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-glass: rgba(255, 255, 255, 0.12);
-  --border-gold: rgba(212, 175, 55, 0.35);
-  --border-gold-solid: #D4AF37;
+  --border-subtle: rgba(18, 22, 17, 0.12);
+  --border-glass: rgba(18, 22, 17, 0.16);
+  --border-gold: rgba(58, 47, 21, 0.24);
+  --border-gold-solid: #3A2F15;
 
   /* Typography: Montserrat for brand name, Neutraface for everything else */
   --font-brand: 'Montserrat', sans-serif;
@@ -54,12 +54,12 @@
   --font-display: 'Neutraface', sans-serif;
   --font-sans: 'Neutraface', sans-serif;
 
-  /* Elevations & Shadows */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.65);
-  --shadow-gold: 0 10px 35px rgba(212, 175, 55, 0.18);
-  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  /* Elevations & Shadows (Architectural on Sage) */
+  --shadow-sm: 0 4px 12px rgba(18, 22, 17, 0.05);
+  --shadow-md: 0 8px 24px rgba(18, 22, 17, 0.08);
+  --shadow-lg: 0 16px 40px rgba(18, 22, 17, 0.12);
+  --shadow-gold: 0 8px 24px rgba(58, 47, 21, 0.1);
+  --shadow-glass: 0 8px 24px rgba(18, 22, 17, 0.06);
 
   /* Spacing */
   --section-pad-y: clamp(5rem, 8vw, 8.5rem);

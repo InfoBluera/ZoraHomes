@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background-color: var(--bg-primary);
+  background-color: #A3B18A;
   color: var(--text-primary);
   font-family: var(--font-sans);
   line-height: 1.65;
@@ -28,34 +28,10 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* Luxury Background Noise & Subtle Architectural Grid Overlay */
-.bg-grid-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  background-image: 
-    radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
-    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 40px 40px, 120px 120px, 120px 120px;
-  opacity: 0.8;
-}
-
+/* Background Grids & Ambient Glows disabled to keep pure architectural wall finish */
+.bg-grid-overlay,
 .ambient-glow-top {
-  position: fixed;
-  top: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 450px;
-  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, rgba(212, 175, 55, 0) 70%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(40px);
+  display: none !important;
 }
 
 /* Container & Layout */
@@ -75,6 +51,27 @@ section {
   padding-bottom: var(--section-pad-y);
   position: relative;
   z-index: 1;
+  background-color: #A3B18A;
+  color: #121611;
+  border-bottom: 1px solid rgba(18, 22, 17, 0.12);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Master Reference Natural Wall Texture on all sections (Matches Hero Section exactly) */
+section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.075;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='naturalWallTexture'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23naturalWallTexture)'/%3E%3C/svg%3E");
+}
+
+.hero-section::before {
+  display: none; /* Hero already has .hero-wall-texture */
 }
 
 /* Section Header Typography */
@@ -83,16 +80,17 @@ section {
   align-items: center;
   gap: 0.6rem;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: var(--gold-primary);
+  letter-spacing: 0.12em;
+  color: #1A2218;
   margin-bottom: 1rem;
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(18, 22, 17, 0.06);
   padding: 0.35rem 1rem;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(18, 22, 17, 0.16);
+  box-shadow: 0 2px 10px rgba(18, 22, 17, 0.04);
 }
 
 .section-tag::before {
@@ -101,8 +99,7 @@ section {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--gold-primary);
-  box-shadow: 0 0 10px var(--gold-primary);
+  background: #5A471C;
 }
 
 .section-title {
@@ -111,19 +108,21 @@ section {
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: var(--text-primary);
+  color: #121611;
   margin-bottom: 1.25rem;
 }
 
 .section-title em {
   font-style: italic;
   font-family: var(--font-serif);
-  color: var(--gold-muted);
+  background: linear-gradient(135deg, #3A2F15 0%, #685322 45%, #28200E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-desc {
   font-size: clamp(1rem, 1.3vw, 1.15rem);
-  color: var(--text-secondary);
+  color: #2E372B;
   max-width: 680px;
   line-height: 1.7;
 }
@@ -230,71 +229,71 @@ section {
   transition: background-color var(--transition-normal);
 }
 
-/* App Bar Reverted to Plain Black after Scrolling Past Hero Section (Distinct Separated Bar) */
+/* Scrolled Header State — Seamless #A3B18A with Frosted Backdrop & Wall Texture */
 .site-header.scrolled-past-hero {
   padding: 0.75rem 0;
-  background-color: #000000;
+  background-color: rgba(163, 177, 138, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(18, 22, 17, 0.14);
+  box-shadow: 0 4px 20px rgba(18, 22, 17, 0.08);
 }
 
 .site-header.scrolled-past-hero::before {
-  opacity: 0;
-  display: none;
+  opacity: 0.075;
+  display: block;
 }
 
 .site-header.scrolled-past-hero .brand-name {
-  color: var(--text-primary);
+  color: #121611;
 }
 
 .site-header.scrolled-past-hero .brand-subtitle {
-  color: var(--gold-muted);
+  color: #3E4A3B;
 }
 
 .site-header.scrolled-past-hero .nav-link {
-  color: var(--text-secondary);
+  color: #1A2218;
 }
 
 .site-header.scrolled-past-hero .nav-link:hover,
 .site-header.scrolled-past-hero .nav-link.active {
-  color: var(--gold-light);
+  color: #000000;
 }
 
 .site-header.scrolled-past-hero .btn-social-nav {
-  color: var(--text-secondary);
-  border-color: var(--border-subtle);
-  background: rgba(255, 255, 255, 0.03);
+  color: #121611;
+  border-color: rgba(18, 22, 17, 0.22);
+  background: rgba(18, 22, 17, 0.05);
 }
 
 .site-header.scrolled-past-hero .btn-social-nav:hover {
-  border-color: var(--gold-primary);
-  color: var(--gold-primary);
-  background: rgba(212, 175, 55, 0.1);
+  border-color: #121611;
+  color: #000000;
+  background: rgba(18, 22, 17, 0.12);
 }
 
 .site-header.scrolled-past-hero .btn-primary-luxury {
-  background: linear-gradient(135deg, #EADBC0 0%, #C5A880 50%, #A68658 100%);
-  color: #0A0B0E;
-  border: 1px solid rgba(243, 229, 171, 0.3);
-  box-shadow: 0 4px 20px rgba(197, 168, 128, 0.25);
+  background: #141814;
+  color: #F5E8C7;
+  border: 1px solid rgba(243, 229, 171, 0.28);
+  box-shadow: 0 4px 16px rgba(18, 22, 17, 0.2);
 }
 
 .site-header.scrolled-past-hero .btn-primary-luxury:hover {
-  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
-  color: #0A0B0E;
-  border-color: rgba(243, 229, 171, 0.6);
-  box-shadow: 0 8px 28px rgba(212, 175, 55, 0.35);
+  background: #0A0D0A;
+  color: #FFFFFF;
+  border-color: rgba(243, 229, 171, 0.55);
+  box-shadow: 0 8px 24px rgba(18, 22, 17, 0.32);
 }
 
 .site-header.scrolled-past-hero .mobile-toggle-btn {
-  background: var(--bg-card);
-  border-color: var(--border-subtle);
+  background: rgba(18, 22, 17, 0.08);
+  border-color: rgba(18, 22, 17, 0.2);
 }
 
 .site-header.scrolled-past-hero .mobile-toggle-btn span {
-  background: var(--text-primary);
+  background: #121611;
 }
 
 .nav-container {
@@ -481,15 +480,32 @@ section {
   width: 85%;
   max-width: 400px;
   height: 100vh;
-  background: var(--bg-secondary);
-  border-left: 1px solid var(--border-glass);
+  background: #A3B18A;
+  border-left: 1px solid rgba(18, 22, 17, 0.16);
   z-index: 1000;
   padding: 6rem 2.5rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 10px 40px rgba(18, 22, 17, 0.25);
+  overflow: hidden;
+}
+
+.mobile-drawer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.075;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='naturalWallTexture'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23naturalWallTexture)'/%3E%3C/svg%3E");
+}
+
+.mobile-drawer > * {
+  position: relative;
+  z-index: 1;
 }
 
 .mobile-drawer.open {
@@ -741,13 +757,35 @@ section {
   width: 100%;
 }
 
+.hero-logo-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.85rem, 1.6vw, 1.35rem);
+}
+
 .hero-logo-img {
   display: block;
   width: 100%;
-  max-width: clamp(180px, 20vw, 244px);
+  max-width: clamp(170px, 19vw, 235px);
   height: auto;
   aspect-ratio: 244 / 271;
   object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-logo-text {
+  font-family: var(--font-brand);
+  font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+  margin-right: -0.28em;
   pointer-events: none;
   user-select: none;
 }
@@ -756,12 +794,30 @@ section {
    FOOTER SECTION
    ========================================================================== */
 .site-footer {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-glass);
+  background: #A3B18A;
+  border-top: 1px solid rgba(18, 22, 17, 0.16);
   padding-top: 5rem;
   padding-bottom: 2.5rem;
   position: relative;
   z-index: 10;
+  overflow: hidden;
+  color: #121611;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.075;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='naturalWallTexture'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23naturalWallTexture)'/%3E%3C/svg%3E");
+}
+
+.site-footer .container {
+  position: relative;
+  z-index: 1;
 }
 
 .footer-grid {
@@ -900,8 +956,17 @@ section {
     padding-top: clamp(6rem, 16vw, 7.5rem);
     padding-bottom: clamp(2.5rem, 8vw, 3.5rem);
   }
+  .hero-logo-lockup {
+    gap: 0.85rem;
+  }
   .hero-logo-img {
-    max-width: clamp(140px, 35vw, 190px);
+    max-width: clamp(140px, 32vw, 180px);
+  }
+  .hero-logo-text {
+    font-size: clamp(1rem, 3.2vw, 1.3rem);
+    letter-spacing: 0.26em;
+    margin-right: -0.26em;
+    padding-bottom: 0;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -914,7 +979,16 @@ section {
 
 @media (max-width: 480px) {
   .hero-logo-img {
-    max-width: clamp(130px, 45vw, 170px);
+    max-width: clamp(120px, 36vw, 150px);
+  }
+  .hero-logo-lockup {
+    gap: 0.75rem;
+  }
+  .hero-logo-text {
+    font-size: clamp(0.9rem, 3.6vw, 1.15rem);
+    letter-spacing: 0.24em;
+    margin-right: -0.24em;
+    padding-bottom: 0;
   }
 }
 
