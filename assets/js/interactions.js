@@ -35,25 +35,25 @@ function initArchitecturalQuiz() {
       title: 'Haute Architectural Minimalism',
       subtitle: 'Pure Form, Monolithic Symmetry & Tactile Restraint',
       desc: 'Your sensibility gravitates toward pure geometric purity, seamless Italian millwork, concealed circadian illumination, and a zero-clutter architectural ethos that celebrates expansive negative space.',
-      recommendedLead: 'Sachin (Founder) & Devika (Lead Architect)'
+      recommendedLead: 'Architect Devika (Lead Architect)'
     },
     neoclassical: {
       title: 'Neoclassical Contemporary Grandeur',
       subtitle: 'Sculpted Mouldings, Calacatta Gold & European Heritage',
       desc: 'You appreciate high-ceiling proportions, hand-carved boiserie paneling, brushed brass metallurgy, and custom crystal lighting installations balanced with ultra-modern smart comforts.',
-      recommendedLead: 'Abijith (Head of Bespoke Interiors)'
+      recommendedLead: 'Architect Devika (Lead Architect)'
     },
     biophilic: {
       title: 'Organic Biophilic Sanctuary',
       subtitle: 'Raw Roman Travertine, Aged Walnut & Fluid Light Choreography',
       desc: 'You desire spaces that breathe: climate-controlled internal courtyards, tactile fluted woods, acoustic linen drapery, and harmonic integration between exterior landscape and interior shelter.',
-      recommendedLead: 'Devika (Lead Architect & Spatial Strategist)'
+      recommendedLead: 'Architect Devika (Lead Architect & Spatial Strategist)'
     },
     modernist: {
       title: 'Urban Penthouse Brutalism',
       subtitle: 'Smoked Obsidian Glass, Fluted Bronze & Precision Engineering',
       desc: 'Your aesthetic is bold, dramatic, and unapologetically visionary. Dark stone slabs, statement art walls, cantilevered bespoke cabinetry, and tailored acoustic zones define your signature sanctuary.',
-      recommendedLead: 'Sachin (Founder) & Abijith (Interior Designer)'
+      recommendedLead: 'Architect Devika (Lead Architect)'
     }
   };
 
