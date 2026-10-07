@@ -86,8 +86,251 @@
 
 
 /* --------------------------------------------------------------------------
-   2. LEADERSHIP & TEAM SECTION
+   2. LEAD ARCHITECT DEVIKA SECTION
    -------------------------------------------------------------------------- */
+.architect-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .architect-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.architect-visual-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.architect-visual-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-lg), 0 0 35px rgba(212, 175, 55, 0.12);
+}
+
+.architect-visual-frame {
+  position: relative;
+  aspect-ratio: 4/4.5;
+  width: 100%;
+  overflow: hidden;
+  background: #151720;
+}
+
+.architect-avatar-svg,
+.architect-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform var(--transition-smooth), filter var(--transition-smooth);
+}
+
+.architect-visual-card:hover .architect-portrait-img {
+  transform: scale(1.04);
+}
+
+.architect-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  background: rgba(20, 24, 20, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(243, 229, 171, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #F5E8C7;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.architect-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #D4AF37;
+  box-shadow: 0 0 8px #D4AF37;
+}
+
+.architect-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: rgba(18, 22, 17, 0.08);
+  border-top: 1px solid var(--border-subtle);
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.architect-stat-item {
+  padding: 0 0.5rem;
+}
+
+.architect-stat-item:not(:last-child) {
+  border-right: 1px solid var(--border-subtle);
+}
+
+.architect-stat-val {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #121611;
+  line-height: 1.1;
+}
+
+.architect-stat-lbl {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.architect-content {
+  display: flex;
+  flex-direction: flex-column;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.architect-heading-group .section-tag {
+  margin-bottom: 0.75rem;
+}
+
+.architect-name-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  color: #121611;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.architect-name-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, #3A2F15 0%, #685322 45%, #28200E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.architect-role-subtitle {
+  font-size: 0.95rem;
+  color: #5A471C;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.architect-bio-lead {
+  font-size: 1.02rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.architect-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .architect-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.architect-pillar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: all var(--transition-normal);
+}
+
+.architect-pillar-card:hover {
+  border-color: rgba(20, 24, 20, 0.4);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.architect-pillar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.architect-pillar-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: rgba(20, 24, 20, 0.08);
+  color: #141814;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.architect-pillar-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: #121611;
+  font-weight: 600;
+}
+
+.architect-pillar-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.architect-quote-box {
+  background: rgba(20, 24, 20, 0.06);
+  border-left: 3px solid #141814;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem 1.5rem;
+}
+
+.architect-quote-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: #121611;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.architect-quote-author {
+  font-size: 0.82rem;
+  color: #5A471C;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.architect-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
