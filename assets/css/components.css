@@ -170,7 +170,7 @@
 
 .architect-quick-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   background: rgba(18, 22, 17, 0.08);
   border-top: 1px solid var(--border-subtle);
   padding: 1.25rem 1rem;
