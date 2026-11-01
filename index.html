@@ -337,166 +337,339 @@
           <div class="section-header-center reveal">
             <div class="section-tag">Design Philosophy</div>
             <h2 class="section-title">
-              Where Architectural Precision Meets <em>Haute Living</em>
+              We create spaces, where spaces <em>become stories</em>
             </h2>
             <p class="section-desc">
-              We believe an elite home is neither merely decorated nor simply
-              built—it is choreographed. We sculpt spaces that harmonize
-              structural integrity, biophilic serenity, and bespoke material
-              luxury.
+              We create spaces where architecture goes beyond form and function,
+              becoming a canvas for experiences, emotions, and memories. Every
+              space has a story to tell, and every design we create is an
+              opportunity to make that story meaningful, timeless, and uniquely
+              yours.
             </p>
           </div>
 
           <div class="services-grid">
-            <div class="service-card reveal delay-1">
-              <div class="service-icon-box">
-                <svg
-                  width="26"
-                  height="26"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                >
-                  <path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18" />
-                </svg>
+            <style>
+              .philosophy-card {
+                position: relative;
+                overflow: hidden;
+                isolation: isolate;
+              }
+              .philosophy-card-bg {
+                position: absolute;
+                inset: 0;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 0;
+                transform: scale(1.06);
+                transition:
+                  opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 0;
+                pointer-events: none;
+              }
+              .philosophy-card-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                  180deg,
+                  rgba(18, 22, 17, 0.72) 0%,
+                  rgba(18, 22, 17, 0.84) 45%,
+                  rgba(18, 22, 17, 0.94) 100%
+                );
+                opacity: 0;
+                transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                z-index: 1;
+                pointer-events: none;
+              }
+              .philosophy-card-content {
+                position: relative;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+              }
+              .philosophy-card:hover .philosophy-card-bg {
+                opacity: 1;
+                transform: scale(1);
+              }
+              .philosophy-card:hover .philosophy-card-overlay {
+                opacity: 1;
+              }
+              .philosophy-card:hover {
+                border-color: rgba(212, 175, 55, 0.45);
+                box-shadow:
+                  0 16px 40px rgba(18, 22, 17, 0.25),
+                  0 0 30px rgba(212, 175, 55, 0.12);
+              }
+              .philosophy-card .service-title,
+              .philosophy-card .service-desc,
+              .philosophy-card .service-features-list,
+              .philosophy-card .service-features-list li,
+              .philosophy-card .service-features-list li svg,
+              .philosophy-card .service-icon-box {
+                transition:
+                  color 0.35s ease,
+                  background-color 0.35s ease,
+                  border-color 0.35s ease,
+                  box-shadow 0.35s ease;
+              }
+              .philosophy-card:hover .service-title {
+                color: #ffffff;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+              }
+              .philosophy-card:hover .service-desc {
+                color: rgba(255, 255, 255, 0.92);
+                text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+              }
+              .philosophy-card:hover .service-features-list {
+                border-top-color: rgba(255, 255, 255, 0.2);
+              }
+              .philosophy-card:hover .service-features-list li {
+                color: rgba(255, 255, 255, 0.92);
+                text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+              }
+              .philosophy-card:hover .service-features-list li svg {
+                color: #e5c378;
+                filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+              }
+              .philosophy-card:hover .service-icon-box {
+                background: rgba(255, 255, 255, 0.14);
+                border-color: rgba(212, 175, 55, 0.5);
+                color: #f3de9c;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+              }
+            </style>
+
+            <!-- Philosophy Card 1: Spatial Harmony & Experience -->
+            <div class="service-card philosophy-card reveal delay-1">
+              <div
+                class="philosophy-card-bg"
+                style="
+                  background-image: url(&quot;assets/img/philosophy-spatial-harmony.jpg&quot;);
+                "
+              ></div>
+              <div class="philosophy-card-overlay"></div>
+              <div class="philosophy-card-content">
+                <div class="service-icon-box">
+                  <svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                  >
+                    <path d="M3 3h18v18H3zM9 3v18M15 3v18M3 9h18M3 15h18" />
+                  </svg>
+                </div>
+                <h3 class="service-title">Spatial Harmony &amp; Experience</h3>
+                <p class="service-desc">
+                  We believe every space has a rhythm of its own. Through
+                  thoughtful planning, proportion, and the interplay of light
+                  and volume, we create environments that feel natural,
+                  connected, and intuitive. Every element is designed to enhance
+                  the experience of living.
+                </p>
+                <ul class="service-features-list">
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Thoughtful Spatial Planning
+                  </li>
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Natural Light &amp; Ventilation
+                  </li>
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Seamless Indoor–Outdoor Connections
+                  </li>
+                </ul>
               </div>
-              <h3 class="service-title">Spatial Symmetry &amp; Flow</h3>
-              <p class="service-desc">
-                Harmonic spatial geometry eliminates visual friction. Every
-                corridor, ceiling elevation, and sightline is engineered to
-                evoke instantaneous peace and majestic proportion.
-              </p>
-              <ul class="service-features-list">
-                <li>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Golden Ratio Proportions
-                </li>
-                <li>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Natural Light Sightline Engineering
-                </li>
-              </ul>
             </div>
 
-            <div class="service-card reveal delay-2">
-              <div class="service-icon-box">
-                <svg
-                  width="26"
-                  height="26"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                >
-                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                  <polyline points="2 17 12 22 22 17" />
-                  <polyline points="2 12 12 17 22 12" />
-                </svg>
+            <!-- Philosophy Card 2: Materiality & Craftsmanship -->
+            <div class="service-card philosophy-card reveal delay-2">
+              <div
+                class="philosophy-card-bg"
+                style="
+                  background-image: url(&quot;assets/img/philosophy-materiality.jpg&quot;);
+                "
+              ></div>
+              <div class="philosophy-card-overlay"></div>
+              <div class="philosophy-card-content">
+                <div class="service-icon-box">
+                  <svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                  >
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                  </svg>
+                </div>
+                <h3 class="service-title">Materiality &amp; Craftsmanship</h3>
+                <p class="service-desc">
+                  Materials are more than finishes; they give spaces their
+                  character and identity. We explore textures, natural elements,
+                  and honest material expressions to create environments that
+                  are timeless, tactile, and deeply connected to their
+                  surroundings.
+                </p>
+                <ul class="service-features-list">
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Thoughtful Material Selection
+                  </li>
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Natural Textures &amp; Finishes
+                  </li>
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Craftsmanship &amp; Attention to Detail
+                  </li>
+                </ul>
               </div>
-              <h3 class="service-title">Artisanal Material Integrity</h3>
-              <p class="service-desc">
-                We reject synthetic composites. Our materials are
-                quarry-selected in Carrara, hand-hewn by heritage woodworkers in
-                Bavaria, and forged by master brass artisans in Milan.
-              </p>
-              <ul class="service-features-list">
-                <li>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Direct Quarry &amp; Tannery Sourcing
-                </li>
-                <li>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Zero Off-Gassing Natural Finishes
-                </li>
-              </ul>
             </div>
 
-            <div class="service-card reveal delay-3">
-              <div class="service-icon-box">
-                <svg
-                  width="26"
-                  height="26"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.75"
-                >
-                  <path
-                    d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                  />
-                </svg>
+            <!-- Philosophy Card 3: Purposeful Design & Collaboration -->
+            <div class="service-card philosophy-card reveal delay-3">
+              <div
+                class="philosophy-card-bg"
+                style="
+                  background-image: url(&quot;assets/img/philosophy-purposeful-design.jpg&quot;);
+                "
+              ></div>
+              <div class="philosophy-card-overlay"></div>
+              <div class="philosophy-card-content">
+                <div class="service-icon-box">
+                  <svg
+                    width="26"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="5" r="2" />
+                    <path d="m3.5 21 8-14 8 14" />
+                    <path d="M6.5 15.5h11" />
+                  </svg>
+                </div>
+                <h3 class="service-title">
+                  Purposeful Design &amp; Collaboration
+                </h3>
+                <p class="service-desc">
+                  Every project begins with understanding the people,
+                  aspirations, and stories behind it. Through a collaborative
+                  design process and careful execution, we transform ideas into
+                  spaces that balance functionality, individuality, and lasting
+                  value.
+                </p>
+                <ul class="service-features-list">
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Client-Centred Design Approach
+                  </li>
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Integrated Design &amp; Execution
+                  </li>
+                  <li>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    Quality &amp; Detail-Oriented Delivery
+                  </li>
+                </ul>
               </div>
-              <h3 class="service-title">Single-Point Governance</h3>
-              <p class="service-desc">
-                From schematic blueprinting to structural load bearing and final
-                custom drapery installation, Zora Homes acts as the sole
-                custodian, ensuring zero friction and absolute accountability.
-              </p>
-              <ul class="service-features-list">
-                <li>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Turnkey Dedicated Project Director
-                </li>
-                <li>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Guaranteed Handover Timelines
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -522,18 +695,18 @@
                   class="architect-portrait-img"
                 />
               </div>
-              
+
               <div class="architect-quick-stats">
-                <div class="architect-stat-item">
+                <!-- <div class="architect-stat-item">
                   <div class="architect-stat-val">12+</div>
                   <div class="architect-stat-lbl">Years Design</div>
-                </div>
+                </div> -->
                 <div class="architect-stat-item">
-                  <div class="architect-stat-val">40+</div>
+                  <div class="architect-stat-val">38+</div>
                   <div class="architect-stat-lbl">Estates Built</div>
                 </div>
                 <div class="architect-stat-item">
-                  <div class="architect-stat-val">LEED</div>
+                  <div class="architect-stat-val">COA</div>
                   <div class="architect-stat-lbl">Accredited</div>
                 </div>
               </div>
@@ -543,16 +716,18 @@
             <div class="architect-content reveal-right">
               <div class="architect-heading-group">
                 <div class="section-tag">Lead Architect Profile</div>
-                <h2 class="architect-name-title">
-                  Architectural Mastery by <em>Architect Devika</em>
-                </h2>
+                <h2 class="architect-name-title">Architect <em>Devika</em></h2>
                 <div class="architect-role-subtitle">
                   Lead Architect &amp; Head of Spatial Strategy
                 </div>
               </div>
 
               <p class="architect-bio-lead">
-                Devika commands structural innovation, biophilic living integration, and daylight geometry. Her architectural vision seamlessly merges structural audacity with sustainable climate resilience, creating private sanctuaries that feel both monumental and deeply personal.
+                Devika commands structural innovation, biophilic living
+                integration, and daylight geometry. Her architectural vision
+                seamlessly merges structural audacity with sustainable climate
+                resilience, creating private sanctuaries that feel both
+                monumental and deeply personal.
               </p>
 
               <!-- 4 Core Pillars -->
@@ -560,59 +735,97 @@
                 <div class="architect-pillar-card">
                   <div class="architect-pillar-header">
                     <div class="architect-pillar-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                        />
                       </svg>
                     </div>
-                    <h3 class="architect-pillar-title">Biophilic Integration</h3>
+                    <h3 class="architect-pillar-title">
+                      Biophilic Integration
+                    </h3>
                   </div>
                   <p class="architect-pillar-desc">
-                    Harnessing natural light, breeze corridors, and indoor green courtyards to nurture human well-being.
+                    Harnessing natural light, breeze corridors, and indoor green
+                    courtyards to nurture human well-being.
                   </p>
                 </div>
 
                 <div class="architect-pillar-card">
                   <div class="architect-pillar-header">
                     <div class="architect-pillar-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <path d="M3 9h18M9 21V9"/>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M3 9h18M9 21V9" />
                       </svg>
                     </div>
                     <h3 class="architect-pillar-title">Daylight Geometry</h3>
                   </div>
                   <p class="architect-pillar-desc">
-                    Golden-ratio spatial proportions and solar orientation calculated for dramatic ambient light.
+                    Golden-ratio spatial proportions and solar orientation
+                    calculated for dramatic ambient light.
                   </p>
                 </div>
 
                 <div class="architect-pillar-card">
                   <div class="architect-pillar-header">
                     <div class="architect-pillar-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                       </svg>
                     </div>
-                    <h3 class="architect-pillar-title">LEED Environmentalism</h3>
+                    <h3 class="architect-pillar-title">
+                      LEED Environmentalism
+                    </h3>
                   </div>
                   <p class="architect-pillar-desc">
-                    Sustainable materials, low-carbon footprints, and zero off-gassing natural finishes.
+                    Sustainable materials, low-carbon footprints, and zero
+                    off-gassing natural finishes.
                   </p>
                 </div>
 
                 <div class="architect-pillar-card">
                   <div class="architect-pillar-header">
                     <div class="architect-pillar-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                        <polyline points="2 17 12 22 22 17"/>
-                        <polyline points="2 12 12 17 22 12"/>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                        <polyline points="2 17 12 22 22 17" />
+                        <polyline points="2 12 12 17 22 12" />
                       </svg>
                     </div>
                     <h3 class="architect-pillar-title">Structural Precision</h3>
                   </div>
                   <p class="architect-pillar-desc">
-                    Exhaustive CAD modeling, load redistribution, and zero-compromise milestone governance.
+                    Exhaustive CAD modeling, load redistribution, and
+                    zero-compromise milestone governance.
                   </p>
                 </div>
               </div>
@@ -620,7 +833,9 @@
               <!-- Quote Box -->
               <div class="architect-quote-box">
                 <div class="architect-quote-text">
-                  “Architecture must breathe. We design living envelopes that choreograph natural light, celebrate natural material honesty, and evoke profound human serenity.”
+                  “Architecture must breathe. We design living envelopes that
+                  choreograph natural light, celebrate natural material honesty,
+                  and evoke profound human serenity.”
                 </div>
                 <div class="architect-quote-author">
                   — Devika, Lead Architect
@@ -830,7 +1045,7 @@
             </div>
 
             <!-- Service 4 -->
-            <div class="service-card reveal delay-1">
+            <!-- <div class="service-card reveal delay-1">
               <div class="service-number">04</div>
               <div class="service-icon-box">
                 <svg
@@ -881,8 +1096,12 @@
               </ul>
             </div>
 
+ -->
+
+
+
             <!-- Service 5 -->
-            <div class="service-card reveal delay-2">
+            <!-- <div class="service-card reveal delay-2">
               <div class="service-number">05</div>
               <div class="service-icon-box">
                 <svg
@@ -932,10 +1151,10 @@
                   Concealed Invisible Sound Transducers
                 </li>
               </ul>
-            </div>
+            </div> -->
 
             <!-- Service 6 -->
-            <div class="service-card reveal delay-3">
+            <!-- <div class="service-card reveal delay-3">
               <div class="service-number">06</div>
               <div class="service-icon-box">
                 <svg
@@ -984,6 +1203,9 @@
                 </li>
               </ul>
             </div>
+ -->
+
+
           </div>
         </div>
       </section>
@@ -1033,10 +1255,10 @@
                   3D Hyper-Realistic Immersion &amp; CAD Modeling
                 </h3>
                 <p class="step-desc">
-                  Devika develops full-scale photorealistic renders,
-                  material moodboards, and millwork elevations, allowing you to
-                  walk through every inch of your future home before
-                  construction commences.
+                  Devika develops full-scale photorealistic renders, material
+                  moodboards, and millwork elevations, allowing you to walk
+                  through every inch of your future home before construction
+                  commences.
                 </p>
                 <div class="step-deliverables">
                   <span class="step-tag">4K Spatial Virtual Tour</span>
@@ -1099,9 +1321,9 @@
                   Curated White-Glove Handover &amp; Lifetime Concierge
                 </h3>
                 <p class="step-desc">
-                  Architect Devika personally walks you through your
-                  completed sanctuary, handing over warranty dossiers and
-                  smart-home programming guides.
+                  Architect Devika personally walks you through your completed
+                  sanctuary, handing over warranty dossiers and smart-home
+                  programming guides.
                 </p>
                 <div class="step-deliverables">
                   <span class="step-tag">10-Year Warranty Certificate</span>
@@ -1113,8 +1335,6 @@
           </div>
         </div>
       </section>
-
-
 
       <!-- ======================================================================
          ARCHITECTURAL STYLE IDENTITY QUIZ
@@ -1333,82 +1553,7 @@
         </div>
       </section>
 
-      <!-- ======================================================================
-         TACTILE MATERIAL & PALETTE SHOWCASE
-         ======================================================================== -->
-      <section
-        id="materials"
-        style="
-          background: var(--bg-secondary);
-          border-top: 1px solid var(--border-glass);
-          border-bottom: 1px solid var(--border-glass);
-        "
-      >
-        <div class="container">
-          <div class="section-header-center reveal">
-            <div class="section-tag">Material Excellence</div>
-            <h2 class="section-title">The Zora <em>Material Library</em></h2>
-            <p class="section-desc">
-              Direct-sourced natural stones, master-hewn woods, and
-              architectural metallurgy curated by Abijith.
-            </p>
-          </div>
 
-          <div class="materials-grid">
-            <!-- Material 1 -->
-            <div class="material-card reveal delay-1">
-              <div class="material-swatch swatch-marble"></div>
-              <div class="material-details">
-                <div class="material-origin">Carrara, Italy</div>
-                <h4 class="material-title">Calacatta Gold Marble</h4>
-                <p class="material-desc">
-                  Rare mountain quarry extraction with distinctive
-                  champagne-gold and smoky grey veining.
-                </p>
-              </div>
-            </div>
-
-            <!-- Material 2 -->
-            <div class="material-card reveal delay-2">
-              <div class="material-swatch swatch-walnut"></div>
-              <div class="material-details">
-                <div class="material-origin">Appalachian Mountains, USA</div>
-                <h4 class="material-title">Acoustic Fluted Walnut</h4>
-                <p class="material-desc">
-                  Sustainably harvested aged hardwood milled with custom
-                  micro-flutes for acoustic damping.
-                </p>
-              </div>
-            </div>
-
-            <!-- Material 3 -->
-            <div class="material-card reveal delay-3">
-              <div class="material-swatch swatch-brass"></div>
-              <div class="material-details">
-                <div class="material-origin">Milan, Italy</div>
-                <h4 class="material-title">Brushed Champagne Brass</h4>
-                <p class="material-desc">
-                  Hand-patinated solid alloy with micro-clear protective seal
-                  against environmental oxidation.
-                </p>
-              </div>
-            </div>
-
-            <!-- Material 4 -->
-            <div class="material-card reveal delay-4">
-              <div class="material-swatch swatch-travertine"></div>
-              <div class="material-details">
-                <div class="material-origin">Tivoli, Italy</div>
-                <h4 class="material-title">Raw Roman Travertine</h4>
-                <p class="material-desc">
-                  Porous organic limestone honed to silky perfection for
-                  grounding monolithic centerpieces.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- ======================================================================
          TESTIMONIALS & PSYCHOLOGICAL TRUST MATRIX
@@ -1881,8 +2026,8 @@
               Ready to Architect Your <em>Living Masterpiece</em>?
             </h2>
             <p class="section-desc" style="margin: 0 auto 2.5rem">
-              Schedule a confidential consultation with Lead Architect Devika to review your architectural blueprints and spatial
-              vision.
+              Schedule a confidential consultation with Lead Architect Devika to
+              review your architectural blueprints and spatial vision.
             </p>
             <div
               style="
@@ -2168,7 +2313,8 @@
             margin-bottom: 1.5rem;
           "
         >
-          Engage directly with Lead Architect Devika for your residence. Direct correspondence via
+          Engage directly with Lead Architect Devika for your residence. Direct
+          correspondence via
           <a
             href="mailto:contact@zorahomes.in"
             style="color: var(--gold-primary); text-decoration: none"
